@@ -1,0 +1,30 @@
+package com.yizhao.proto;
+
+option java_package = "com.yizhao.proto";
+option java_outer_classname = "TxnResponseFriendProto";
+import "txn.response.proto";
+message TxnResponseFriend {
+    extend com.yizhao.proto.TxnResponse {
+        required TxnResponseFriend response = 100;
+    }
+    optional string userId = 1;
+    optional string friendCode = 2;
+    optional string sessionKey = 3;
+    optional string firstName = 4;
+    optional string lastName = 5;
+    optional string character = 6;
+    optional string characterColor = 7;
+    optional string clothing = 8;
+    optional string accessories = 9;
+    optional string background = 10;
+    optional string avatarUrl = 11;
+    optional string osgKidId = 12;
+    optional string status = 13;
+    optional string userName = 14;
+    optional string profileImage = 15;
+    optional string isParent = 16;
+    optional string relationship = 17;
+    optional string osgUserKey = 18;
+    optional string blocked = 19;
+    optional string friends = 20;
+}

@@ -1,0 +1,47 @@
+package com.yizhao.proto;
+
+option java_package = "com.yizhao.proto";
+option java_outer_classname = "KafkaProto";
+//import "social.http.common.proto";
+// import "google/protobuf/descriptor.proto";
+//import "com.yizhao.kafka.proto.txn.request.proto";
+import "txn.request.proto";
+import "txn.response.proto";
+
+
+message KafkaMessage {
+    optional string loginapihitcount = 1;
+    optional string loginapisuccessfulhitcount = 2;
+    optional string loginapifailhitcount = 3;
+    optional string loginapiavgrtt = 4;
+}
+
+// Kafka Logging
+message KafkaLoggingMessage {
+    optional int64 apikey_op_id = 1;
+    optional string http_method = 2;
+    optional string url = 3;
+    optional string type = 4;
+    optional int64 state_change = 5;	// unused
+    optional string comment = 6;		// unused
+    optional int64 timestamp = 7;
+    optional KafkaRequestParam request = 8;
+    optional KafkaResponseParam response = 9;
+}
+
+message KafkaRequestParam {
+    optional com.yizhao.proto.TxnRequest txnrequest = 1;
+    optional string request = 2; // only a request body in a Json string format
+}
+
+message KafkaResponseParam {
+    optional com.yizhao.proto.TxnResponse txnresponse = 1;
+    optional string response = 2; // a response in a Json string format
+}
+
+
+
+
+
+
+

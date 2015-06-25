@@ -1,0 +1,32 @@
+package com.yizhao.proto;
+
+option java_package = "com.yizhao.proto";
+option java_outer_classname = "TxnRequestProto";
+//import "social.http.common.proto";
+
+message TxnRequest {
+    extensions 100 to max;
+    // used #:
+    // 100 - TxnPayloadFriend
+    // 101 - TxnPayloadPhoto
+    // 102 - TxnPayloadEmail
+    // 103 - TxnPayloadChat
+
+    //	enum PayloadType {
+    //		TxnPayloadFriend = 1;
+    //		TxnPayloadPhoto = 2;
+    //		TxnPayloadEmail = 3;
+    //		TxnPayloadChat = 4;
+    //	}
+    //	required PayloadType payloadtype = 1;
+
+    message PathParam {
+    }
+
+    message QueryParam {
+    }
+
+    message BodyParam {
+    }
+
+}
