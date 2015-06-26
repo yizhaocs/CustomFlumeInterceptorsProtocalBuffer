@@ -2,6 +2,7 @@ package com.yizhao.flume;
 
 import com.google.protobuf.ExtensionRegistry;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.TextFormat;
 import com.yizhao.proto.KafkaProto.KafkaLoggingMessage;
 import com.yizhao.proto.TxnPayloadFriendProto.TxnPayloadFriend;
 import com.yizhao.proto.TxnResponseFriendProto.TxnResponseFriend;
@@ -52,7 +53,9 @@ public class CustomInterceptor
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
-
+        String textFormat = TextFormat.printToString(decodeMessage);
+        System.out.println("ApikeyOpId:" + decodeMessage.getApikeyOpId());
+        System.out.println("textFormat:" + textFormat);
         // These are the event's headers
         Map<String, String> headers = event.getHeaders();
 
