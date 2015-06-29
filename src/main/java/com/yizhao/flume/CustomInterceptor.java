@@ -61,7 +61,7 @@ public class CustomInterceptor
 
 
         String newBody = moreBody ;
-        event.setBody(decodeMessage.toByteArray());
+        event.setBody(textFormat.getBytes());
 
 
         // Let the enriched event go
