@@ -19,6 +19,8 @@ import java.util.Map;
 /**
  * Created by yizhao on 6/18/15.
  */
+// bin/flume-ng agent --conf conf --conf-file conf/custominterceptor.conf -name a1 -Dflume.root.logger=INFO,console
+// cp /home/yi.zhao/CustomFlumeInterceptorsProtocalBuffer-1.0-SNAPSHOT.jar /fuhu/flumeuser/flume/lib
 public class CustomInterceptor
         implements Interceptor {
 
